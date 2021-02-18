@@ -21,6 +21,22 @@ def solution_1 () :
             break
     return(int(sum(x))) # approximation
     
+def solution_2 () :
+    s = 0
+    x_0 = 1
+    x_1 = 1
+    while True : 
+        x_2 = x_0 + x_1 
+        if x_2 > 4e6 :
+            break
+        if x_2 % 2 == 0 :
+            s = s + x_2
+        x_0 = x_1 
+        x_1 = x_2
+    return(s)
+    
 %timeit solution_1()
+%timeit solution_2()
 
-#29.8 µs ± 133 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+#30.7 µs ± 318 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+#5.07 µs ± 42.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
