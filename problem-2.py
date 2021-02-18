@@ -27,7 +27,7 @@ def solution_2 () :
     x_1 = 1
     while True : 
         x_2 = x_0 + x_1 
-        if x_2 > 4e6 :
+        if x_2 > 4000000 :
             break
         if x_2 % 2 == 0 :
             s = s + x_2
@@ -39,4 +39,4 @@ def solution_2 () :
 %timeit solution_2()
 
 #30.7 µs ± 318 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
-#5.07 µs ± 42.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+#3.89 µs ± 46.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
