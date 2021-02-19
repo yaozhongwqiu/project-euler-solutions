@@ -34,9 +34,25 @@ def solution_2 () :
         x_0 = x_1 
         x_1 = x_2
     return(s)
+
+def solution_3():
+    # Ryan's solution
+    a, b = 1, 1 
+    f = [a, b]
+    
+    while f[-1] < 4000000:
+        f.append(a + b)
+        b = f[-1]
+        a = f[-2]
+    
+    f.pop() # Need to remove last item in list 
+    f_even = [i for i in f if i%2==0]
+    return sum(f_even)
     
 %timeit solution_1()
 %timeit solution_2()
+
+
 
 #30.7 µs ± 318 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 #3.89 µs ± 46.6 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
